@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Responsive Nested Dropdown Menu</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+</head>
+<body>
+	<nav>
+		<div>Menu</div>
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">About Us</a></li>
+			<li><a href="#">Products <i class="fa fa-sort-desc"></i></a>
+				<ul>
+					<li><a href="#">Product 1</a></li>
+					<li><a href="#">Product 2</a></li>
+					<li><a href="#">Product 3</a></li>
+					<li><a href="#">Product 4</a></li>
+					<li><a href="#">Product 5</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Courses <i class="fa fa-sort-desc"></i></a>
+				<ul>
+					<li><a href="#">Courses 1</a></li>
+					<li><a href="#">Courses 2</a></li>
+					<li><a href="#">Courses 3</a></li>
+					<li><a href="#">Courses 4</a></li>
+					<li><a href="#">Courses 5</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Gallery</a></li>
+			<li><a href="#">Contact Us</a></li>
+		</ul>
+	</nav>
+
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript">
+		$(window).resize(function(){
+			if ($(window).width() > 480) {
+				$("ul").removeAttr('style');
+			};
+		});
+
+		$("nav div").click(function(){
+			$("ul").slideToggle();
+			$("ul ul").css("display", "none");
+		});
+
+		$("ul li").click(function(){
+			$("ul ul").slideUp();
+			$(this).find('ul').slideToggle();
+		});
+	</script>
+</body>
+</html>
